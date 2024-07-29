@@ -1,11 +1,23 @@
 <div class="flex justify-between items-center h-16 p-5 bg-gray-200">
-  <input
+  <!-- <input
     id="searchInput"
     type="text"
     placeholder="Search products..."
     class="border p-2 w-1/3"
     [(ngModel)]="title"
-  />
+  /> -->
+  <mat-form-field class="w-1/3">
+    <mat-label>Search Title</mat-label>
+    <input
+      matInput
+      #message
+      maxlength="256"
+      placeholder="Search products..."
+      class="border p-2 w-1/3"
+      [(ngModel)]="title"
+      type="text"
+    />
+  </mat-form-field>
   <input
     id="filterType"
     class="border p-2 w-1/4"
