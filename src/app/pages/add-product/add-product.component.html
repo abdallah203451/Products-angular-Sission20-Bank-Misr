@@ -1,0 +1,112 @@
+<div class="task-form-container">
+  <h2>Add New Product</h2>
+  <form #form="ngForm" (ngSubmit)="addTask()" [formGroup]="addProductForm">
+    <div>
+      <label for="title">Title:</label>
+      <input
+        formControlName="title"
+        type="text"
+        id="title"
+        [(ngModel)]="product.title"
+        name="title"
+        required
+      />
+    </div>
+    <p
+      *ngIf="title!.invalid && (title!.dirty || title!.touched)"
+      style="color: red"
+    >
+      enter a title mare than 3 characters.
+    </p>
+
+    <label for="description">Description:</label>
+    <textarea
+      formControlName="description"
+      id="description"
+      [(ngModel)]="product.description"
+      name="description"
+    ></textarea>
+    <p
+      *ngIf="
+        description!.invalid && (description!.dirty || description!.touched)
+      "
+      style="color: red"
+    >
+      enter a description mare than 20 characters.
+    </p>
+
+    <div>
+      <label for="price">Price:</label>
+      <input
+        formControlName="price"
+        type="text"
+        id="price"
+        [(ngModel)]="product.price"
+        name="price"
+        required
+      />
+    </div>
+    <p
+      *ngIf="price!.invalid && (price!.dirty || price!.touched)"
+      style="color: red"
+    >
+      enter a price more than or equal 1.
+    </p>
+
+    <div>
+      <label for="brand">brand:</label>
+      <input
+        formControlName="brand"
+        type="text"
+        id="brand"
+        [(ngModel)]="product.brand"
+        name="brand"
+        required
+      />
+    </div>
+    <p
+      *ngIf="brand!.invalid && (brand!.dirty || brand!.touched)"
+      style="color: red"
+    >
+      this field is required.
+    </p>
+
+    <div>
+      <label for="category">category:</label>
+      <input
+        formControlName="category"
+        type="text"
+        id="category"
+        [(ngModel)]="product.category"
+        name="category"
+        required
+      />
+    </div>
+    <p
+      *ngIf="category!.invalid && (category!.dirty || category!.touched)"
+      style="color: red"
+    >
+      this field is required.
+    </p>
+
+    <div>
+      <label for="images">images:</label>
+      <input
+        formControlName="images"
+        type="text"
+        id="images"
+        [(ngModel)]="product.images"
+        name="images"
+        required
+      />
+    </div>
+    <p
+      *ngIf="images!.invalid && (images!.dirty || images!.touched)"
+      style="color: red"
+    >
+      this field is required.
+    </p>
+
+    <button [disabled]="!addProductForm.valid" type="submit">Add Task</button>
+  </form>
+</div>

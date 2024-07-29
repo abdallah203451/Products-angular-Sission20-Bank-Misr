@@ -1,0 +1,38 @@
+.task-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+  div {
+    margin: 5px 0;
+    text-overflow: ellipsis;
+  }
+
+  .task-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  }
+}

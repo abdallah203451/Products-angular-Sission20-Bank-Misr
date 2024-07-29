@@ -1,0 +1,20 @@
+<div class="task-card">
+  <h3>{{ product.title }}</h3>
+  <div>description: {{ product.description }}</div>
+  <p>Brand: {{ product.brand }}</p>
+  <p>Category: {{ product.category }}</p>
+  @if(quantity!=0){
+  <p>quantity: {{ quantity }}</p>
+  }
+  <br />
+  <b
+    ><p>Price: {{ product.price }}</p></b
+  >
+  <div class="task-actions">
+    @if(quantity==0){
+    <a [routerLink]="['/home', product.id]">Details</a>
+    <a (click)="addToCart(product)">add to cart</a>
+    }
+    <button (click)="onDelete()">Delete</button>
+  </div>
+</div>

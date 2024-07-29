@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="header">
+    <h1>Products</h1>
+  </div>
+  <div class="task-list">
+    @for (c of cart; track c) {
+    <app-product-card
+      [product]="c"
+      [quantity]="c.quantity"
+      (deleteTask)="onTaskDelete($event)"
+    >
+    </app-product-card>
+    }
+  </div>
+</div>
